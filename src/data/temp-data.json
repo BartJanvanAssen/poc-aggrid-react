@@ -1,0 +1,47 @@
+{
+  "menu-items":[
+    {
+      "id": 1,
+      "name": "Frutti Di Mare",
+      "type": "category"
+    },
+    {
+      "id": 2,
+      "name": "Primi",
+      "type": "category"
+    },
+    {
+      "id": 3,
+      "name": "Pasta",
+      "type": "category"
+    },
+    {
+      "id": 4,
+      "name": "Secondi",
+      "type": "category"
+    }
+  ],
+  "menu": [
+    {
+      "name": "Dinner",
+      "items": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Dessert",
+      "items": [
+
+      ]
+    },
+    {
+      "name": "Bar and Wine",
+      "items": [
+
+      ]
+    }
+  ]
+}

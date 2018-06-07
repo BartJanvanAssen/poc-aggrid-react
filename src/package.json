@@ -1,0 +1,21 @@
+{
+  "name": "react-redux-ag-grid-table-app-prototype",
+  "version": "1.0.0",
+  "description": "Project is under construction.",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "redux": "3.7.2",
+    "react-redux": "5.0.6",
+    "react-dom-factories": "1.0.2",
+    "react-dom": "16.0.0",
+    "react": "16.0.0",
+    "node-uuid": "1.4.8",
+    "material-ui-icons": "1.0.0-beta.17",
+    "material-ui": "1.0.0-beta.24",
+    "expect": "22.0.3",
+    "deep-freeze": "0.0.1",
+    "ag-grid-react": "15.0.0",
+    "ag-grid": "15.0.0"
+  }
+}
