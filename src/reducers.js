@@ -14,6 +14,23 @@ const rowDataReducer = (state = [], action) => {
   }
 };
 
+const modalReducer = (state = {
+  modalOpen: false,
+  editId: null
+}, action) => {
+  switch (action.type) {
+    case 'ACTIVATE_MODAL':
+      const id = action.id
+      return {
+        ...state,
+        modalOpen: true,
+        editId: id
+      }
+    default:
+      return state;
+  }
+};
+
 const itemControl = (state = [], action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -25,6 +42,7 @@ const itemControl = (state = [], action) => {
 
 const agGridApp = combineReducers({
   rowDataReducer,
+  modalReducer,
   itemControl
 });
 

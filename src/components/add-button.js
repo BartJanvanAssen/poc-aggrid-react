@@ -8,7 +8,7 @@ import menuData from '../data/temp-data.json'
 const AddRowData = (props) => {
     return (
         <div>
-            <Button onClick={props.onClick} raised color="primary">
+            <Button onClick={props.onClick} variant='raised' color="primary">
                 Add Demo Data
             </Button>
         </div>

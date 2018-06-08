@@ -3,18 +3,20 @@
   "description": "Project is under construction.",
   "version": "0.0.36",
   "dependencies": {
-    "redux": "3.7.2",
-    "react-redux": "5.0.6",
-    "react-dom-factories": "1.0.2",
-    "react-dom": "16.0.0",
-    "react": "16.0.0",
-    "node-uuid": "1.4.8",
-    "material-ui-icons": "1.0.0-beta.17",
-    "material-ui": "1.0.0-beta.24",
-    "expect": "22.0.3",
+    "@material-ui/core": "^1.2.0",
+    "ag-grid": "^17.1.1",
+    "ag-grid-enterprise": "^17.1.1",
+    "ag-grid-react": "^17.1.0",
     "deep-freeze": "0.0.1",
-    "ag-grid-react": "15.0.0",
-    "ag-grid": "15.0.0"
+    "expect": "22.0.3",
+    "material-ui": "1.2.0",
+    "material-ui-icons": "1.0.0-beta.17",
+    "node-uuid": "1.4.8",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-dom-factories": "1.0.2",
+    "react-redux": "5.0.6",
+    "redux": "3.7.2"
   },
   "devDependencies": {
     "react-scripts": "1.0.0"

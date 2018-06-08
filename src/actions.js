@@ -15,4 +15,11 @@ const incrementRowItem = (row) => {
   }
 };
 
-export { addMenuItem, incrementRowItem };
+const setRowEditActive = (id) => {
+  return {
+    type: 'ACTIVATE_MODAL',
+    id
+  }
+};
+
+export { addMenuItem, incrementRowItem, setRowEditActive };
