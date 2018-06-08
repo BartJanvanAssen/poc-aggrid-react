@@ -34,6 +34,7 @@ class AgGridTable extends Component {
   }
 
   onRowClicked(e) {
+
     this.props.setRowEditActive(e.data.id)
   }
 

@@ -2,15 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { addMenuItem } from '../actions'
 
-import Button from 'material-ui/Button'
+import RaisedButton from 'material-ui/RaisedButton';
 import menuData from '../data/temp-data.json'
 
 const AddRowData = (props) => {
     return (
         <div>
-            <Button onClick={props.onClick} variant='raised' color="primary">
-                Add Demo Data
-            </Button>
+            <RaisedButton onClick={props.onClick} label="Add Demo Data" secondary={true} />
         </div>
     )
 };

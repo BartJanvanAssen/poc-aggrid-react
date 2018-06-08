@@ -26,6 +26,12 @@ const modalReducer = (state = {
         modalOpen: true,
         editId: id
       }
+    case 'CLOSE_MODAL':
+      return {
+        ...state,
+        modalOpen: false,
+        editId: null
+      }
     default:
       return state;
   }

@@ -22,4 +22,10 @@ const setRowEditActive = (id) => {
   }
 };
 
-export { addMenuItem, incrementRowItem, setRowEditActive };
+const closeModal = (id) => {
+  return {
+    type: 'CLOSE_MODAL'
+  }
+};
+
+export { addMenuItem, incrementRowItem, setRowEditActive, closeModal };

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import Button from 'material-ui/Button';
-import AddIcon from 'material-ui-icons/Add';
+import React, { Component } from 'react'
+import FlatButton from 'material-ui/FlatButton';
 
 const SupplyButtonControl = (params) => {
 
@@ -8,9 +7,9 @@ const SupplyButtonControl = (params) => {
 
     return (
       <div>
-        <Button mini color="primary" aria-label="add" onClick={params.onclick}>
-          <AddIcon />
-        </Button>
+        <FlatButton mini color="primary" aria-label="add" onClick={params.onclick}>
+          +
+        </FlatButton>
       </div>
     );
 }
