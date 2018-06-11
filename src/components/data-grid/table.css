@@ -1,0 +1,10 @@
+.ag-react-container {
+    display: inline;
+}
+.ag-react-container  .icon{
+    display: inline-block;
+    height: 24px;
+    width: auto;
+    margin-top: 8px;
+    padding-right: 9px;
+}

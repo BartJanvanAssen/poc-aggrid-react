@@ -1,0 +1,6 @@
+.app-bar-title {
+    --white-transparant: #ffffff5e;
+
+    border-left: 1px solid var(--white-transparant);
+    padding-left: 22px;
+}

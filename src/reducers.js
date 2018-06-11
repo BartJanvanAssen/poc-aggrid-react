@@ -37,6 +37,26 @@ const modalReducer = (state = {
   }
 };
 
+const SideScreenReducer = (state = {
+  open: false
+}, action) => {
+  switch (action.type) {
+    case 'OPEN_SIDE_SCREEN':
+      const id = action.id
+      return {
+        ...state,
+        open: true
+      }
+    case 'CLOSE_SIDE_SCREEN':
+      return {
+        ...state,
+        open: false
+      }
+    default:
+      return state;
+  }
+};
+
 const itemControl = (state = [], action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -49,7 +69,8 @@ const itemControl = (state = [], action) => {
 const agGridApp = combineReducers({
   rowDataReducer,
   modalReducer,
-  itemControl
+  itemControl,
+  SideScreenReducer
 });
 
 export { rowDataReducer, agGridApp };

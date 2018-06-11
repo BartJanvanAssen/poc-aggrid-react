@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
-import GridTable from './components/table';
-import Modal from './components/modal';
-import AddData from './components/add-button';
-import { testAddRowData } from './tests';
+import React, { Component } from 'react'
+import { connect } from 'react-redux';
+
+// Components
+import GridTable from './components/data-grid/table'
+import Modal from './components/modal'
+import AddDataButton from './components/add-button'
+import AppWrapper from './components/app-wrapper/index'
+import DesktopSideScreen from './components/desktop-side-screen/index'
+
+// Misc
+import './style.css'
+
+// Tests
+// import { testAddRowData } from './tests';
 
 class App extends Component {
-
   render() {
     //testAddRowData();
 
@@ -14,13 +23,20 @@ class App extends Component {
         <header >
         </header>
         <div>
-          <AddData />
-          <GridTable />
-          <Modal />
+          <AppWrapper>
+            <GridTable />
+            <AddDataButton />
+            <Modal />
+          </AppWrapper>
+          {this.props.sideScreenOpen && <DesktopSideScreen />}
         </div>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  sideScreenOpen: true
+})
+
+export default connect(mapStateToProps)(App)

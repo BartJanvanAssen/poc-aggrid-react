@@ -2,70 +2,88 @@
   "menu": [
     {
       "id": 1,
-      "dataPath": ["Dinner"]
+      "dataPath": ["Dinner"],
+      "icon": "http://simpleicon.com/wp-content/uploads/folder-2.png"
     },
     {
       "id": 2,
-      "dataPath": ["Dinner", "Primi"]
+      "dataPath": ["Dinner", "Primi"],
+      "icon": "http://simpleicon.com/wp-content/uploads/folder-2.png"
     },
     {
       "id": 3,
       "dataPath": ["Dinner", "Primi", "Baby Heirloom Kale"],
       "ingredients": "Broken anchovy & shallot vinaigrette, ciabatta crostini, Pecorino Romano",
-      "price": 17
+      "price": 17,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 4,
-      "dataPath": ["Dinner", "Secondi"]
+      "dataPath": ["Dinner", "Secondi"],
+      "icon": "http://simpleicon.com/wp-content/uploads/folder-2.png"
     },
     {
       "id": 5,
       "dataPath": ["Dinner", "Secondi", "*Wagyu Bavette"],
       "ingredients": "Rangers Valley, Australia, 8 oz, sea salt baked potato, roasted garlic butter, vin cotto, grilled romaine with Gorgonzola and Parmesan",
-      "price": 39
+      "price": 39,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 6,
       "dataPath": ["Dinner", "Secondi", "*Prime Ribeye"],
       "ingredients": "Pineland Farms, Maine, 14 oz, sea salt baked potato, roasted garlic butter, vin cotto, grilled romaine with Gorgonzola and Parmesan",
-      "price": 47
+      "price": 47,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 7,
-      "dataPath": ["Dinner", "Contorni"]
+      "dataPath": ["Dinner", "Contorni"],
+      "icon": "http://simpleicon.com/wp-content/uploads/folder-2.png"
     },
     {
       "id": 8,
       "dataPath": ["Dinner", "Contorni", "Wood grilled Peppers"],
-      "price": 4.5
+      "price": 4.5,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 9,
       "dataPath": ["Dinner", "Contorni", "Hand-cut Parmesan Truffle Fries"],
-      "price": 5
+      "price": 5,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 10,
       "dataPath": ["Dinner", "Contorni", "Garlic Roasted, Wild and Exotic Mushrooms"],
-      "price": 9
+      "price": 9,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 11,
       "dataPath": ["Dessert", "Strawberry Shortcake"],
       "ingredients": "“Harry’s Berries”, Tahitian-vanilla mascarpone, strawberry syrup",
-      "price": 14.3
+      "price": 14.3,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 12,
       "dataPath": ["Dessert", "Panna Cotta di Caramello"],
       "ingredients": "Tahitian vanilla bean, mixed nut praline, salted caramel, lace tuile",
-      "price": 13
+      "price": 13,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
     },
     {
       "id": 13,
       "dataPath": ["Dessert", "Homemade Sorbetto or Gelato"],
       "ingredients": "Pastry Chef’s daily selection, three scoops with pistachio tuile",
-      "price": 11
+      "price": 11,
+      "icon": "https://pizza-pasta-menu.indolj.com/assets/images/data/extra-cheese.png"
+    },
+    {
+      "id": 14,
+      "dataPath": ["Dessert"],
+      "icon": "http://simpleicon.com/wp-content/uploads/folder-2.png"
     }
   ]
 }

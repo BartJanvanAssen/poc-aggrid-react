@@ -4,11 +4,12 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { AgGridReact } from 'ag-grid-react';
 
-import { setRowEditActive } from '../actions';
-import { SupplyButtonControl } from './ButtonControlRenderer.jsx';
+import { setRowEditActive } from '../../actions';
+import { SupplyButtonControl } from '../ButtonControlRenderer.jsx';
 
 import 'ag-grid/dist/styles/ag-grid.css';
 import 'ag-grid/dist/styles/ag-theme-material.css';
+import './table.css'
 
 var columnDefs = [
   // { headerName: "Description", field: "description" },
@@ -34,7 +35,6 @@ class AgGridTable extends Component {
   }
 
   onRowClicked(e) {
-
     this.props.setRowEditActive(e.data.id)
   }
 
@@ -44,26 +44,28 @@ class AgGridTable extends Component {
 
   render() {
     return (
-      <div style={{ height: 1500, width: 1500 }} className="ag-theme-material">
+      <div style={{ height: 1000, width: 1100 }} className="ag-theme-material">
         <AgGridReact
+          frameworkComponents={{
+            menuCellRenderer: MenuItemCellRender
+          }}
           rowData={this.state.rowData}
           columnDefs={this.state.columnDefs}
           onGridReady={this.onGridReady}
           onRowClicked={this.rowClicked}
           animateRows
           rowClicked={this.rowClicked}
-          enableFilter
-          enableSorting
           treeData
           getDataPath={data => data.dataPath}
           enableRangeSelection
           groupDefaultExpanded={-1}
           autoGroupColumnDef={{
             headerName: 'Courses',
-            rowDrag: true,
+            // rowDrag: true,
             width: 250,
             cellRendererParams:{
               suppressCount: true,
+              innerRenderer: "menuCellRenderer"
             }
           }}
         >
@@ -73,6 +75,18 @@ class AgGridTable extends Component {
   }
 }
 
+class MenuItemCellRender extends Component {
+  render() {
+    return (
+      <span>
+        {this.props.data && <img className='icon' src={this.props.data.icon} />}
+        {this.props.value}
+      </span>
+    )
+  }
+}
+
+
 const mapStateToAgGridProps = (state) => ({
   menuItems: state.rowDataReducer
 })
@@ -81,6 +95,4 @@ const mapDispatchToProps = (dispatch) => ({
   setRowEditActive: (id) => dispatch(setRowEditActive(id))
 })
 
-const GridTable = connect(mapStateToAgGridProps, mapDispatchToProps)(AgGridTable);
-
-export default GridTable
+export default connect(mapStateToAgGridProps, mapDispatchToProps)(AgGridTable)
