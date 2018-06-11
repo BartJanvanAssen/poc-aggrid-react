@@ -1,5 +1,23 @@
 import { combineReducers } from 'redux';
 
+const same = (arr1, arr2) => {
+  return arr1.toString() === arr2.toString()
+}
+
+const moveRowData = (exitingRows, pathToMove, targetPath) => {
+  if (same(pathToMove, targetPath)) {
+    return exitingRows
+  }
+
+  return exitingRows.slice()
+    .map(row => same(row.dataPath.slice(0, pathToMove.length), pathToMove) ?
+      ({
+        ...row,
+        dataPath: targetPath.concat(row.dataPath.slice(pathToMove.length - 1))
+      }) : row
+    );
+};
+
 const rowDataReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_ROWDATA':
@@ -9,6 +27,8 @@ const rowDataReducer = (state = [], action) => {
         ...state,
         item
       ];
+    case 'MOVE_ROWDATA':
+      return moveRowData(state, action.pathToMove, action.targetPath)
     default:
       return state;
   }

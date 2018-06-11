@@ -5,13 +5,11 @@ const addMenuItem = (menuItem) => {
   }
 };
 
-const incrementRowItem = (row) => {
-  var quantity = 123
-
+const moveRowData = (pathToMove, targetPath) => {
   return {
-    type: 'INCREMENT',
-    id: row.id,
-    quantity
+    type: 'MOVE_ROWDATA',
+    pathToMove,
+    targetPath
   }
 };
 
@@ -28,4 +26,4 @@ const closeModal = (id) => {
   }
 };
 
-export { addMenuItem, incrementRowItem, setRowEditActive, closeModal };
+export { addMenuItem, moveRowData, setRowEditActive, closeModal };

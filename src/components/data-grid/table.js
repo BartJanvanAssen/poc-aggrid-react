@@ -4,7 +4,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { AgGridReact } from 'ag-grid-react';
 
-import { setRowEditActive } from '../../actions';
+import { setRowEditActive, moveRowData } from '../../actions';
 import { SupplyButtonControl } from '../ButtonControlRenderer.jsx';
 
 import 'ag-grid/dist/styles/ag-grid.css';
@@ -12,7 +12,6 @@ import 'ag-grid/dist/styles/ag-theme-material.css';
 import './table.css'
 
 var columnDefs = [
-  // { headerName: "Description", field: "description" },
   { headerName: "Ingredients", field: "ingredients" },
   { headerName: "Price", field: "price" }
 ];
@@ -21,26 +20,26 @@ class AgGridTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rowData: [],
       columnDefs: columnDefs
-    };
+    }
 
-    this.onGridReady = this.onGridReady.bind(this);
     this.rowClicked = this.onRowClicked.bind(this);
-  };
-
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridApi.sizeColumnsToFit();
   }
 
   onRowClicked(e) {
     this.props.setRowEditActive(e.data.id)
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({ rowData: props.menuItems });
-  };
+  onRowDragEnd = (event) => {
+    if(!event.overNode) {
+      return
+    }
+
+    const movingFilePath = event.node.data.dataPath;
+    const targetPath = event.overNode.data.dataPath;
+
+    this.props.moveRowData(movingFilePath, targetPath);
+  }
 
   render() {
     return (
@@ -49,19 +48,23 @@ class AgGridTable extends Component {
           frameworkComponents={{
             menuCellRenderer: MenuItemCellRender
           }}
-          rowData={this.state.rowData}
+          rowData={this.props.menuItems}
           columnDefs={this.state.columnDefs}
-          onGridReady={this.onGridReady}
+          onGridReady={params => params.api.sizeColumnsToFit()}
           onRowClicked={this.rowClicked}
+          onRowDragEnd={this.onRowDragEnd}
           animateRows
-          rowClicked={this.rowClicked}
           treeData
           getDataPath={data => data.dataPath}
-          enableRangeSelection
+          getRowNodeId={data => data.id}
           groupDefaultExpanded={-1}
+          rowDragManaged={true}
+          animateRows={true}
+          enableSorting={true}
+          enableFilter={true}
           autoGroupColumnDef={{
             headerName: 'Courses',
-            // rowDrag: true,
+            rowDrag: true,
             width: 250,
             cellRendererParams:{
               suppressCount: true,
@@ -92,7 +95,8 @@ const mapStateToAgGridProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  setRowEditActive: (id) => dispatch(setRowEditActive(id))
+  setRowEditActive: (id) => dispatch(setRowEditActive(id)),
+  moveRowData: (movingFilePath, targetPath) => dispatch(moveRowData(movingFilePath, targetPath))
 })
 
 export default connect(mapStateToAgGridProps, mapDispatchToProps)(AgGridTable)
